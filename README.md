@@ -51,3 +51,28 @@ $ express -h
   在 Windows 中，通过如下命令启动此应用：
 
     > set DEBUG=myapp:* & npm start
+8. 路由
+  路由定义： app.METHOD(PATH, HANDLER)
+  4中常见路由方法：
+
+  （1）get方法
+  app.get('/', function (req, res) {
+    res.send('Hello World!')
+  })
+
+  （2）post方法
+  app.post('/', function (req, res) {
+    res.send('Got a POST request')
+  })
+
+  （3）put方法
+  app.put('/user', function (req, res) {
+    res.send('Got a PUT request at /user')
+  })
+
+  （4）delete方法
+  app.delete('/user', function (req, res) {
+    res.send('Got a DELETE request at /user')
+  })
+
+9. 路由正则匹配，同一路由适配get,put,delete,post, 路由中间件， 路由模块化http://www.expressjs.com.cn/en/guide/routing.html
