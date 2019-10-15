@@ -1,7 +1,9 @@
 const express = require('express')
 const app = express()
 const birds = require('./birds')
-app.use(express.static('public'))
+const path = require('path')
+// app.use(express.static('public'))
+app.use('/static', express.static(path.join(__dirname, 'public')))
 app.use('/birds', birds) // 路由模块化
 
 app.get('/secret/a', (req, res) => {

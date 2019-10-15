@@ -93,3 +93,10 @@ res.sendStatus() 	发送请求响应状态码
 express.static(root, [options]) // 内置中间件函数
 通过如下代码就可以将 public 目录下的图片、CSS 文件、JavaScript 文件对外开放访问
 app.use(express.static('public'))
+
+12. 多个资源服务器如果要使用多个静态资源目录，请多次调用 express.static 中间件函数：
+
+app.use(express.static('public'))
+app.use(express.static('files'))
+
+13. 兼容 app.use('/static', express.static(path.join(__dirname, 'public')))
