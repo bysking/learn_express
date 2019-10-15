@@ -25,6 +25,41 @@ app.get('/bysking/:uId/home/:homeId', (req, res) => {
   res.send(req.params)
 })
 
+const cb0 = function (req, res, next) {
+  console.log('CB0')
+  next()
+}
+
+var cb1 = function (req, res, next) {
+  console.log('CB1')
+  next()
+}
+
+app.get('/cb', [cb0, cb1], // 处理请求函数中间件穿行
+  function (req, res, next) {
+    console.log('the response will be sent by the next function ...')
+    next()
+  },
+  function (req, res, next) {
+    // res.send('Hello from D!')
+    console.log('onceMore')
+    next()
+  },
+  function (req, res, next) {
+    console.log('the response will be sent by the next function ...')
+    next()
+  },
+  function (req, res, next) {
+    // res.send('Hello from D!')
+    console.log('onceMore')
+    next()
+  },
+  (req, res) => {
+    res.send('终于结束')
+  }
+)
+
+
 app.listen(3000, () => {
   console.log('Example app listening on port 3000!')
 })
