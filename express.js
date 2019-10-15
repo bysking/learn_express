@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+const birds = require('./birds')
+app.use('/birds', birds) // 路由模块化
 
 app.get('/secret/a', (req, res) => {
   res.send('geta')
