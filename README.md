@@ -88,4 +88,8 @@ res.send() 	发送各种各样的响应
 res.sendFile() 	8字节发送文件.
 res.sendStatus() 	发送请求响应状态码
 
-11. 
+11. express托管静态文件
+利用 Express 托管静态文件
+express.static(root, [options]) // 内置中间件函数
+通过如下代码就可以将 public 目录下的图片、CSS 文件、JavaScript 文件对外开放访问
+app.use(express.static('public'))
