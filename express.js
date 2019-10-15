@@ -59,6 +59,11 @@ app.get('/cb', [cb0, cb1], // 处理请求函数中间件穿行
   }
 )
 
+// 区别与all
+app.route('/testroute')
+  .get((req, res) => { console.log('get'); res.send('get') })
+  .post((req, res) => { console.log('post'); res.send('post') })
+  .put((req, res) => { console.log('put'); res.send('put') })
 
 app.listen(3000, () => {
   console.log('Example app listening on port 3000!')

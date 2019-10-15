@@ -76,3 +76,16 @@ $ express -h
   })
 
 9. 路由正则匹配，同一路由适配get,put,delete,post, 路由中间件， 路由模块化http://www.expressjs.com.cn/en/guide/routing.html
+
+10. 请求方法
+res.download() 	文件下载.
+res.end() 	结束响应
+res.json() 	Send a JSON response.
+res.jsonp() 	Send a JSON response with JSONP support.
+res.redirect() 	重定向请求
+res.render() 	渲染模板
+res.send() 	发送各种各样的响应
+res.sendFile() 	8字节发送文件.
+res.sendStatus() 	发送请求响应状态码
+
+11. 
